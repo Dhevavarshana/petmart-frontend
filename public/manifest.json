@@ -1,0 +1,25 @@
+{
+  "short_name": "PetMart",
+  "name": "PetMart - Online Pet Store & Adoption System",
+  "description": "Buy pet food, toys, accessories and adopt pets online.",
+  "icons": [
+    {
+      "src": "petmart-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "petmart-32.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#FF7A00",
+  "background_color": "#fff7ed",
+  "categories": ["shopping", "lifestyle"],
+  "lang": "en"
+}

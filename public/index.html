@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#FF7A00" />
+    <meta name="description" content="PetMart - Buy pet food, toys, accessories and adopt pets online." />
+    <meta name="keywords" content="pet store, adopt pets, dog food, cat food, pet accessories, pet grooming" />
+    <meta name="author" content="PetMart" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="PetMart - Online Pet Store & Adoption System" />
+    <meta property="og:description" content="Shop premium pet products and adopt loving pets near you." />
+    <meta property="og:type" content="website" />
+
+    <!--
+      ╔══════════════════════════════════════╗
+      ║   PETMART FAVICON — ALL BROWSERS     ║
+      ╚══════════════════════════════════════╝
+      Using inline SVG data URI so it NEVER
+      gets blocked by old .ico file in cache.
+      The ?v=3 busts any previous cache.
+    -->
+    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/petmart-icon.svg?v=3" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/petmart-32.svg?v=3" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/petmart-16.svg?v=3" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/petmart-icon.svg?v=3" />
+    <link rel="shortcut icon" type="image/svg+xml" href="%PUBLIC_URL%/petmart-icon.svg?v=3" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>PetMart - Online Pet Store &amp; Adoption System</title>
+
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+      #root { min-height: 100vh; }
+
+      /* ── Splash Screen ── */
+      #splash {
+        position: fixed; inset: 0;
+        background: linear-gradient(135deg, #fff7ed 0%, #fce7f3 100%);
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+      #splash .logo-wrap {
+        width: 90px; height: 90px;
+        background: linear-gradient(135deg, #FF7A00, #6A0DAD);
+        border-radius: 24px;
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 8px 32px rgba(255,122,0,0.35);
+        animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+      }
+      #splash .logo-wrap svg { animation: pulse 1.4s ease-in-out infinite; }
+      #splash .brand {
+        margin-top: 18px;
+        font-size: 26px; font-weight: 900;
+        letter-spacing: -0.5px;
+      }
+      #splash .brand .pet  { color: #FF7A00; }
+      #splash .brand .mart { color: #6A0DAD; }
+      #splash .sub {
+        margin-top: 5px; font-size: 12px;
+        color: #78350f; opacity: 0.65;
+        letter-spacing: 0.5px; text-transform: uppercase;
+      }
+      #splash .dots { display: flex; gap: 7px; margin-top: 28px; }
+      #splash .dot {
+        width: 9px; height: 9px; border-radius: 50%;
+        background: linear-gradient(135deg, #FF7A00, #6A0DAD);
+        animation: bounce 1.1s ease-in-out infinite;
+      }
+      #splash .dot:nth-child(2) { animation-delay: 0.18s; }
+      #splash .dot:nth-child(3) { animation-delay: 0.36s; }
+
+      @keyframes popIn  { from { transform: scale(0.4); opacity:0; } to { transform: scale(1); opacity:1; } }
+      @keyframes pulse  { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+      @keyframes bounce { 0%,100% { transform: translateY(0); opacity:1; } 50% { transform: translateY(-9px); opacity:0.4; } }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run PetMart.</noscript>
+
+    <!-- ── Splash Screen ── -->
+    <div id="splash">
+      <div class="logo-wrap">
+        <svg width="54" height="54" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="32" cy="40" rx="15" ry="13" fill="white"/>
+          <ellipse cx="15" cy="24" rx="7"  ry="8"  fill="white"/>
+          <ellipse cx="27" cy="18" rx="7"  ry="8"  fill="white"/>
+          <ellipse cx="40" cy="18" rx="7"  ry="8"  fill="white"/>
+          <ellipse cx="51" cy="26" rx="6"  ry="7"  fill="white"/>
+        </svg>
+      </div>
+      <div class="brand">
+        <span class="pet">Pet</span><span class="mart">Mart</span>
+      </div>
+      <div class="sub">Online Pet Store &amp; Adoption System</div>
+      <div class="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
+    <div id="root"></div>
+
+    <script>
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          var s = document.getElementById('splash');
+          if (s) { s.style.opacity = '0'; setTimeout(function(){ s.remove(); }, 500); }
+        }, 900);
+      });
+    </script>
+  </body>
+</html>
