@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: process.env.REACT_APP_API_URL || 'http://petmart-backend.onrender.com/api' });
+const api = axios.create({ baseURL: "https://petshop-backend-dx9u.onrender.com/api" });
 
 api.interceptors.request.use((config) => {
   const user = JSON.parse(localStorage.getItem('petmart_user') || 'null');
